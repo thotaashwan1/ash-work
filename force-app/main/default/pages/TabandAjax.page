@@ -1,0 +1,16 @@
+<apex:page standardController="Account">
+    <apex:tabPanel switchType="ajax">
+        <apex:tab label="Detail">
+            <apex:detail relatedList="false"/>
+        </apex:tab>
+        <apex:tab label="Contacts">
+            <apex:relatedList list="contacts"/>        
+        </apex:tab>
+        <apex:tab label="Opportunities">
+            <apex:relatedList list="Opportunities"/>
+        </apex:tab>
+        <apex:tab label="cases">
+            <apex:relatedList list="cases"/>        
+        </apex:tab>        
+    </apex:tabPanel>    
+</apex:page>

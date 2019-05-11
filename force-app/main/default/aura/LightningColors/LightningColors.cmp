@@ -1,0 +1,12 @@
+<aura:component >
+    <h1>Hellow Welcome to Lightning</h1>
+	<div>
+        <p class="Orange"> This is Orange</p>
+        <p class="White"> This is White</p>
+        <p class="Green"> This is Green</p> 
+        <ltng:require styles="/resource/bootstrap"/>
+        <p class="myBootstrap">
+        	Hell Bootstrap!!
+    	</p>
+</div>
+</aura:component>

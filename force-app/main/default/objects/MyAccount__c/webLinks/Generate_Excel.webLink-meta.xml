@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Excel</fullName>
+    <availability>online</availability>
+    <description>Generates Excel file from XMLResponse__c field and attaches it to the record.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Excel</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!requireScript(&quot;/soap/ajax/40.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/apex.js&quot; )}
+var selectId = &#39;{!MyAccount__c.Id }&#39;;
+var Result = sforce.apex.execute(&quot;AttachExcelToMyAccount&quot;, &quot;GenerateExcel&quot;, {actId:selectId});
+if(Result.Indexof(&quot;SUCCESS&quot;)){
+  Alert(&#39;Excel File Generated Successfully!&#39;);
+  window.location.href = window.location.href;
+}else{
+  Alert(Result);
+}</url>
+</WebLink>

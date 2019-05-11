@@ -1,0 +1,22 @@
+<apex:page controller="ClosedOps" extensions="Ext2" >
+    <apex:form >
+        <apex:pageBlock title="Closed Opportunities">
+            <apex:pageBlockTable value="{!Closed_Ops}" var="o">
+                <apex:column value="{!o.Name}"/>
+                <apex:column value="{!o.Type}"/>
+                <apex:column value="{!o.StageName}"/>
+                <apex:column value="{!o.CloseDate}"/>                
+            </apex:pageBlockTable>
+            <apex:pageBlock title="Campaign records">
+            <apex:pageBlockTable value="{!camps}" var="c">
+                <apex:column value="{!c.name}"/>
+                <apex:column value="{!c.status}"/>
+                <apex:column value="{!c.StartDate}"/>
+                <apex:column value="{!c.EndDate}"/>                
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:pageBlock>
+        
+    
+    </apex:form>
+</apex:page>

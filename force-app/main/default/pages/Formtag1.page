@@ -1,0 +1,15 @@
+<apex:page standardController="Account" >
+    <apex:form >
+        <apex:pageblock >
+            Name:"{!Account.Name}"<br/>
+            Industry:"{!Account.Industry}"
+        </apex:pageblock>
+        
+        <apex:pageBlock title="Account Details">
+           <b>Name:</b> <apex:inputfield value="{!Account.Name}"/>
+           <b>Industry:</b> <apex:inputfield value="{!Account.Industry}"/>
+        </apex:pageBlock>
+    
+    </apex:form>
+
+</apex:page>

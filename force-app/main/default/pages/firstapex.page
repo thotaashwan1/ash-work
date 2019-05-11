@@ -1,0 +1,5 @@
+<apex:page controller="FirstController" >
+    "{!s}"<p/>
+    "{!a.Name}"<br/>
+    "{!a.Phone}"<br/>
+</apex:page>

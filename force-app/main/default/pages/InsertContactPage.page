@@ -1,0 +1,92 @@
+<apex:page controller="InsertContact" id="pg">
+    <style>
+        .popupBackground {
+     / Background color /
+     background-color:black;
+     opacity: 0.20;
+     filter: alpha(opacity = 20);
+  
+     / Dimensions /
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: 998;
+     position: absolute;
+ }
+ .PopupPanel {
+     left: 50%;
+     width: 100px;
+     //margin-left: -100px;
+     border-radius: 15px
+     top: 50%;
+     height: 100px;
+     margin-top: 200px;
+     z-index: 999;
+     position: fixed;
+ }
+        
+    </style>
+    <apex:form id="fm">
+        <apex:actionFunction name="contactAFN" action="{!insertRec}" rerender="pgMsg,pbs,cpbs" status="pleasewait"/>
+        <apex:pageMessages id="pgMsg"/>
+        <apex:actionStatus id="pleasewait" stopText="">
+            <apex:facet name="start">
+                <div>
+                    <div class="popupBackground"></div>
+                    <div class="PopupPanel">
+                        <img src="{!URLFOR($Resource.Loading)}"/>?
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:pageBlock id="pb">
+            <apex:pageBlockButtons id="pbb">
+                <apex:commandButton value="Save Record" onclick="saveRec();return false;"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="pbs">
+                <apex:inputField value="{!objCont.FirstName}" id="firstId"/>
+                <apex:inputField value="{!objCont.LastName}" id="lastId"/>
+                <apex:inputField value="{!objCont.phone}" id="phoneId"/>
+                <apex:inputField value="{!objCont.Fax}" id="FxId"/>
+                <apex:inputField value="{!objCont.Email}" id="EmailId"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!ContactsList}" var="cl" id="cpbs">
+                <apex:column headerValue="Edit">
+                    <apex:commandLink action="{!displayContact}" value="Edit" immediate="true" rerender="pbs"> 
+                        <apex:param value="{!cl.id}" assignTo="{!RecordId}" Name="ContactDetails"/> 
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column headerValue="Send Email">
+                    <apex:commandLink action="{!sendEmail}" value="Send Email" immediate="true">
+                        <apex:param value="{!cl.Id}" assignTo="{!RecordId}" Name="SendEmail"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!cl.FirstName}"/>
+                <apex:column value="{!cl.LastName}"/>
+                <apex:column value="{!cl.Phone}"/>
+                <apex:column value="{!cl.Fax}"/>
+                <apex:column value="{!cl.Email}"/>
+              </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        function saveRec(){
+            var firstName = document.getElementById('pg:fm:pb:pbs:firstId').value;
+            var lastName = document.getElementById('pg:fm:pb:pbs:lastId').value;
+            var phone =   document.getElementById('pg:fm:pb:pbs:phoneId').value;
+            if(firstName==''){
+                alert('Enter First Name');
+            }else if(lastName==''){
+                alert('Enter Last Name');
+            }
+            else if(phone ==''){
+                alert('Enter Contact Phone');
+            }else{
+                contactAFN();    
+            }
+        }
+    </script>
+</apex:page>

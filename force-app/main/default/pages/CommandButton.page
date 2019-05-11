@@ -1,0 +1,33 @@
+<apex:page standardController="Account" extensions="Ext2,Ext1">
+ <apex:form >
+    <apex:pageBlock >
+    <apex:pageBlocksection title="Read Only" columns="1" >
+        Name: "{!Account.name}"<br/><br/>
+        Industry: "{!Account.Industry}"
+    </apex:pageBlocksection>
+    <apex:pageblocksection title="editable" columns="1" >
+        <apex:inputfield value="{!Account.name}"/>
+        <apex:inputfield value="{!Account.Industry}"/>
+    </apex:pageblocksection>    
+    <apex:pageblockbuttons >
+        <apex:commandButton value="Quick Save" action="{!quickSave}" />
+        <apex:commandButton value="Save It" action="{!Save}"/>
+    </apex:pageblockbuttons>
+    </apex:pageBlock>
+    <apex:pageblock >
+        <apex:pageblocktable value="{!camps}" var="c">
+            <apex:column value="{!c.Name}"/>
+            <apex:column value="{!c.Status}"/>
+            <apex:column value="{!c.StartDate}"/>
+            <apex:column value="{!c.EndDate}"/>        
+        </apex:pageblocktable>
+    </apex:pageblock>
+    <apex:pageblock >
+        <apex:pageblocktable value="{!cont}" var="t">
+            <apex:column value="{!t.Name}"/>
+            <apex:column value="{!t.Phone}"/>
+            <apex:column value="{!t.Email}"/>      
+        </apex:pageblocktable>
+    </apex:pageblock>
+ </apex:form>
+</apex:page>

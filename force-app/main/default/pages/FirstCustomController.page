@@ -1,0 +1,13 @@
+<apex:page controller="C2">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!acts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Type}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Fax}"/>
+        </apex:pageBlockTable>
+        <apex:commandbutton value="GO TO AccountWithTwoVariables" action="/apex/AccountwithTwoVariables" style="text-align: center;"/>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

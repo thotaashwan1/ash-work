@@ -1,0 +1,24 @@
+<apex:page controller="ActionMethodPageRef">
+  <apex:form >
+    <apex:pageblock >
+        <apex:pageblocktable value="{!default1}" var="d">
+            <apex:column value="{!d.Name}"/>
+            <apex:column value="{!d.Phone}"/>
+            <apex:column value="{!d.Industry}"/>
+            <apex:column value="{!d.Type}"/>
+        </apex:pageblocktable>
+        <apex:pageblockButtons >
+             <apex:commandbutton value="Customer-Direct" action="{!direct}"/>
+             <apex:commandbutton value="Customer-Channel" action="{!channel}"/>
+        </apex:pageblockButtons>    
+    </apex:pageblock>
+    <apex:pageblock >
+        <apex:pageblocktable value="{!acts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Type}"/>
+        </apex:pageblocktable>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

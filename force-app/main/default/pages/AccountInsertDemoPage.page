@@ -1,0 +1,39 @@
+<apex:page controller="AccountInsertDemo" tabStyle="Account" id="pg">
+<apex:form id="fm">
+    <apex:actionFunction Name="insertDataAFN" action="{!insertAcc}" rerender="Accpbs,pgmsg,Accpbs1" />
+    <apex:pageMessages id="pgmsg" />
+    <apex:pageBlock id="pb">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Insert Account" onclick="saveRec();return false;" />
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="Accpbs" title="General details">
+            <apex:inputField value="{!objaccount.name}" id="NameId"/>
+            <apex:inputField value="{!objaccount.phone}" id="phoneId"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection id="Accpbs1" title="Office details">
+            <apex:inputField value="{!objaccount.Website}" id="websiteId"/>
+            <apex:inputField value="{!objaccount.fax}" id="faxId"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+<script>
+function saveRec(){
+    
+ var Name =  document.getElementById('pg:fm:pb:Accpbs:NameId').value;
+ var phone =   document.getElementById('pg:fm:pb:Accpbs:phoneId').value;
+ var website =   document.getElementById('pg:fm:pb:Accpbs1:websiteId').value;
+ 
+ if(Name ==''){
+     alert('please enter name');
+ }else if(phone == ''){
+     alert('please enter phone');
+ }else if(website == ''){
+     alert('please enter webite');
+ }else{
+     insertDataAFN();
+ }
+ 
+ 
+}
+</script>
+</apex:page>

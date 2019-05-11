@@ -1,0 +1,32 @@
+<apex:page controller="MyAccountController">
+    <apex:Form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="MyAccount Details">
+                <apex:outputField value="{!myAct.name}"/>
+                <apex:outputField value="{!myAct.Full_Name__c}"/>
+                <apex:outputField value="{!myAct.Industry__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="MyAccount Contact Information">
+                <apex:outputField value="{!myAct.Email_Address__c}"/>
+                <apex:outputField value="{!myAct.Phone__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="edit" action="{!edit}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="ed">
+            <apex:pageBlockSection title="MyAccount Details">
+                <apex:inputField value="{!myAct.name}"/>
+                <apex:inputField value="{!myAct.Full_Name__c}"/>
+                <apex:inputField value="{!myAct.Industry__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="MyAccount Contact Information">
+                <apex:inputField value="{!myAct.Email_Address__c}"/>
+                <apex:inputField value="{!myAct.Phone__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="save" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:Form>
+</apex:page>

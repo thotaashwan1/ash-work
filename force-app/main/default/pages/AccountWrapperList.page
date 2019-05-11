@@ -1,0 +1,45 @@
+<apex:page controller="AccountWrapperList" showHeader="true" sidebar="true">
+    <apex:form >
+        <apex:pageBlock >
+            <table style="width:100%">
+                <apex:repeat value="{!wrpList}" var="w">
+                <tr>
+                    <th style= "background-color: #4CAF50; color: white;">Check Box</th>
+                    <th style= "background-color: #4CAF50; color: white;">Serial No</th>
+                    <th style= "background-color: #4CAF50; color: white;">Account Name</th>> 
+                    <th style= "background-color: #4CAF50; color: white;">Industry</th>
+                    <th style= "background-color: #4CAF50; color: white;">Phone</th>
+                    <th style= "background-color: #4CAF50; color: white;">Type</th>
+                    <th style= "background-color: #4CAF50; color: white;">Account ID</th>
+                </tr>
+                <tr>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:inputCheckbox value="{!w.checkbox}"  label="Check Box"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputText value="{!w.sno}" label="Serial No"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputField value="{!w.accList.name}"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputField value="{!w.accList.Industry}"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputField value="{!w.accList.Phone}"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputField value="{!w.accList.Type}"/></td>
+                    <td style= "background-color: #F0FFFF; color: blue;"><apex:outputField value="{!w.accList.Id}"/></td>
+                </tr>
+                <tr>
+                    <th style= "background-color: #4CAF50; color: white;">Contact Name</th>
+                    <th style= "background-color: #4CAF50; color: white;">Contact Email</th>
+                    <th style= "background-color: #4CAF50; color: white;">Contact Phone</th>
+                    <th style= "background-color: #4CAF50; color: white;">Birth Date</th>
+                    <th style= "background-color: #4CAF50; color: white;">Account ID on Contact</th>
+                </tr>
+                <apex:repeat value="{!w.con}" var="c">
+                <tr>
+                    <td><apex:outputField value="{!c.name}"/></td>
+                    <td><apex:outputField value="{!c.email}"/></td>
+                    <td><apex:outputField value="{!c.phone}"/></td>
+                    <td><apex:outputField value="{!c.Birthdate}"/></td>
+                    <td><apex:outputField value="{!c.AccountId}"/></td>
+                </tr>   
+                </apex:repeat> 
+            </apex:repeat>
+        </table>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

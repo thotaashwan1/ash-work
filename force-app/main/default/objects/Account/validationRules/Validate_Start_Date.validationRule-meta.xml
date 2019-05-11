@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Start_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>Service_Start_Date__c &gt;= TODAY()</errorConditionFormula>
+    <errorDisplayField>Service_Start_Date__c</errorDisplayField>
+    <errorMessage>Service Start Date cannot be current or future date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,57 @@
+<apex:page controller="MyAccountController">
+<style>
+        .popupBackground {
+     / Background color /
+     background-color:black;
+     opacity: 0.20;
+     filter: alpha(opacity = 20);
+  
+     / Dimensions /
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: 998;
+     position: absolute;
+ }
+ .PopupPanel {
+     left: 50%;
+     width: 100px;
+     //margin-left: -100px;
+     border-radius: 15px
+     top: 50%;
+     height: 100px;
+     margin-top: 200px;
+     z-index: 999;
+     position: fixed;
+ }
+        
+    </style>
+    <apex:form >
+    <apex:pageMessages id="pgMsg"/>
+        <apex:actionStatus id="pleasewait" stopText="">
+            <apex:facet name="start">
+        <div>
+            <div class="popupBackground"></div>
+            <div class="PopupPanel">
+                <img src="{!URLFOR ($Resource.Loading)}"/> 
+            </div>
+        </div>
+</apex:facet>
+</apex:actionStatus>
+        <apex:pageBlock title="MyAccount">
+            <apex:pageBlockSection title="Account Details">
+                <apex:inputField value="{!myAct.name}" style="background-color:rgb(255,255,225);color:Blue" required="true"/>
+                <apex:inputField value="{!myAct.Full_Name__c}" style="background-color:rgb(255,255,225);color:Blue"/>
+                <apex:inputField value="{!myAct.Industry__c}" style="background-color:rgb(255,255,225);color:Blue"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Account Contact Information">
+                <apex:inputField value="{!myAct.Email_Address__c}" style="background-color:rgb(255,255,225);color:Blue"/>
+                <apex:inputField value="{!myAct.Phone__c}" style="background-color:rgb(255,255,225);color:Blue" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="SaveMe" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

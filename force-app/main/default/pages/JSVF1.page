@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:outputlabel >First Name</apex:outputlabel>
+    <script>
+        alert("Hello");
+    </script>
+    <apex:outputlabel >Last Name</apex:outputlabel>
+
+</apex:page>

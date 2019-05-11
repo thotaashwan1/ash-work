@@ -1,0 +1,19 @@
+<apex:page sidebar="false" showHeader="true">
+<apex:form >
+<apex:pageblock title="A Block Title">
+<apex:PageBlockSection title="A Section Title">
+I am three components deep !!!
+</apex:PageBlockSection>
+<apex:PageBlockSection >
+<apex:PageBlockSectionItem >
+I am able to understand Visualforce components and attributes !!!
+</apex:PageBlockSectionItem>
+</apex:PageBlockSection>
+<apex:pageblockbuttons >
+<apex:commandButton action="{!Save}" value="Save" id="TheButton"/>
+</apex:pageblockbuttons>
+</apex:PageBlock>
+</apex:form>
+<apex:pageBlock title="Block 2 Title">
+</apex:pageBlock>  
+</apex:page>

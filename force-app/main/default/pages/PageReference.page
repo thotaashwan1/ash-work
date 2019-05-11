@@ -1,0 +1,15 @@
+<apex:page controller="pageReference">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton action="{!direct}" value="Customer-Direct"/>
+            <apex:commandButton action="{!channel}" value="Customer-Channel"/>
+            <apex:commandButton action="{!acts}" value="Account Details"/>
+            <apex:pageBlockTable value="{!acts}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Type}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Account" >
+<apex:pageblock title="Account Details">
+<b>Name:</b>{!Account.Name}<br/>
+<apex:pageblocksection title="Account Detail section" collapsible="false">
+Account Type: {!Account.Type}<br/>
+<b>Phone:</b> {!Account.Phone}<br/>
+<b>Industry:</b> {!Account.Industry}<br/>
+</apex:pageblocksection>
+</apex:pageblock>
+</apex:page>

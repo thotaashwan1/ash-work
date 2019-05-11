@@ -1,0 +1,19 @@
+<apex:page controller="ActionMethod">
+    <apex:pageblock title="Customer-Direct" >
+        <apex:pageblocktable value="{!direct}" var="d">
+            <apex:column value="{!d.Name}"/>
+            <apex:column value="{!d.Phone}"/>
+            <apex:column value="{!d.Type}"/>
+            <apex:column value="{!d.Industry}"/>
+        </apex:pageblocktable>
+    </apex:pageblock>
+    <apex:pageblock title="Customer-Channel">
+        <apex:pageblocktable value="{!channel}" var="c">
+            <apex:column value="{!c.Name}"/>
+            <apex:column value="{!c.Phone}"/>
+            <apex:column value="{!c.Type}"/>
+            <apex:column value="{!c.Industry}"/>
+        </apex:pageblocktable>
+    </apex:pageblock>
+
+</apex:page>

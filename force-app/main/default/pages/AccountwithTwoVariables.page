@@ -1,0 +1,29 @@
+<apex:page controller="C3">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!Direct}" var="d">
+            <apex:column headerValue="Account Name">
+                <apex:commandLink value="{!d.Name}" reRender="detailsection">
+                    <apex:param value="{!d.ID}" name="AccountID"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column value="{!d.Type}"/>
+            <apex:column value="{!d.Phone}"/>
+            <apex:column value="{!d.Industry}"/>        
+        </apex:pageBlockTable>
+        <apex:pageBlockTable value="{!Channel}" var="c">
+            <apex:column headerValue="Account Name">
+                <apex:commandLink value="{!c.Name}" reRender="detailsection">
+                <apex:param value="{!c.ID}" name="AccountID"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column value="{!c.Type}"/>
+            <apex:column value="{!c.Phone}"/>
+            <apex:column value="{!c.Industry}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        <apex:pageBlock id="detailsection">
+            <apex:detail subject="{!$CurrentPage.Parameters.AccountID}"/>        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

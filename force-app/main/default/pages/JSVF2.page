@@ -1,0 +1,12 @@
+<apex:page docType="html-5.0">
+<apex:form >
+    <apex:inputText id="name" onchange="show()"/>
+    <script>
+    	function show(){
+            var myname = document.getElementById('{!$component.name}').value;
+            alert(myname);
+            }
+            
+    </script>
+</apex:form>
+</apex:page>

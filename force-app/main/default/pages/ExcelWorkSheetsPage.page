@@ -1,0 +1,5 @@
+<apex:page controller="ExcelXMLController" contentType="application/vnd.ms-excel#XYZ.xls">
+    {!ExcelData}
+    <c:ExcelGenerator ></c:ExcelGenerator>
+    {!EOF}
+</apex:page>

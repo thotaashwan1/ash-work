@@ -1,0 +1,8 @@
+<apex:page controller="GenerateEXCELForMyAct" contentType="application/vnd.ms-excel#XMLResponse.xls">
+    <apex:pageBlock title="XML Response">
+        <apex:pageBlockTable value="{!lstParseXML}" var="x">
+            <apex:column value="{!x.agency}" headerValue="Agency Name"/>
+            <apex:column value="{!x.score}" headerValue="Agency Score"/>  
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

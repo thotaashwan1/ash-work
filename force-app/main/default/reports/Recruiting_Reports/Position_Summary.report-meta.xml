@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_81488751</developerName>
+        <masterLabel>Region</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Position__c.Location__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>New York, NY</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Boulder, CO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Austin,TX</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>San Francisco, CA</sourceValue>
+            </sourceValues>
+            <value>USA</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>London, England</sourceValue>
+            </sourceValues>
+            <value>UK</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Tokyo, Japan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sydney, Australia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mumbai, India</sourceValue>
+            </sourceValues>
+            <value>Asia Pacific</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Pie</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>BucketField_81488751</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Position__c.Location__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Position__c.Hiring_Manager__c</field>
+    </columns>
+    <description>Position summary by functional area</description>
+    <filter>
+        <criteriaItems>
+            <column>Position__c.Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Position,Pending Approval,Open - Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_81488751</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>UK</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_81488751</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Position Summary</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Position__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Position__c.Close_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

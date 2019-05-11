@@ -1,0 +1,28 @@
+<apex:page controller="InsertOpportunity">
+    <apex:form id="fm">
+        <apex:pageMessages id="pgMsg"/>
+        <apex:actionFunction name="insertOpAFN" action="{!insertOpp}" id="af"/>
+        <apex:pageBlock title="Opportunity Details" id="pb">
+            <apex:pageBlockSection title="General Details" columns="1" id="pbs">
+                    <apex:inputField value="{!objOpp.name}" id="NameId"/>
+                    <apex:inputField value="{!objOpp.Description}" id="DescriptionId"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Insert Record" onclick="saveRec();return false;"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        string name = document.getElementById('fm:pgMsg:pb:pbs:NameId').value;
+        string description = document.getElementById('fm:pgMsg:pb:pbs:DescriptionId').value;
+        
+        function saveRec(){
+            if(name=''){
+                alert('Enter Description for Opportunity');
+            }else{
+                insertOpAFN();
+            }
+        }
+        
+    </script>
+</apex:page>

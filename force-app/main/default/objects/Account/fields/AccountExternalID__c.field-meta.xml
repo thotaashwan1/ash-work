@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountExternalID__c</fullName>
+    <description>This Account external Id is used to integrate with external systems.</description>
+    <displayFormat>Account-{000000}</displayFormat>
+    <externalId>true</externalId>
+    <inlineHelpText>This Account external Id is used to integrate with external systems.</inlineHelpText>
+    <label>AccountExternalID</label>
+    <type>AutoNumber</type>
+</CustomField>

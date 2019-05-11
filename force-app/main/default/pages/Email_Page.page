@@ -1,0 +1,19 @@
+<apex:page controller="SingleEmail">
+
+    <script>
+        function show(){
+            alert('Email sent successfully!!');
+        }
+    </script>
+    <apex:form >
+        <apex:pageblock >
+            <apex:outputLabel value="Email Subject: "/>
+                <apex:inputText value="{!Subject}"/><p/>
+            <apex:outputLabel value="Email Body: "/>
+            <apex:inputTextarea value="{!Email_Body}" rows="6" cols="50"/>
+        <apex:pageBlockButtons location="bottom" onclick="show" >
+            <apex:commandButton value="Send Email" action="{!send}"/>
+        </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,26 @@
+<apex:page controller="AccountsList">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblocksection columns="1" >
+                <apex:pageblocktable value="{!acts}" var="a">
+                    <apex:column headervalue="Account Name">
+                        <apex:commandLink value="{!a.Name}" reRender="AccountDetails">
+                            <apex:param value="{!a.ID}" name="AccountId"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column value="{!a.Type}"/>
+                    <apex:column headervalue="Phone">
+                        <apex:outputfield value="{!a.Phone}">
+                            <apex:inlineEditSupport />
+                        </apex:outputfield>
+                    </apex:column>
+                    <apex:column value="{!a.Industry}"/>
+                </apex:pageblocktable>
+            </apex:pageblocksection>
+        </apex:pageblock>
+        <apex:pageblock id="AccountDetails">
+            <apex:detail subject="{!$CurrentPage.Parameters.AccountId}"/>
+        </apex:pageblock>
+    </apex:form>
+ 
+</apex:page>

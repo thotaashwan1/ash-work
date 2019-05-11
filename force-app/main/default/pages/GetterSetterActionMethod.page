@@ -1,0 +1,19 @@
+<apex:page controller="GetterSetterActionMethod">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Searching Contacts" columns="1">
+            <apex:inputText label="Type of Industry"  value="{!keyword}"/>
+            <apex:commandButton action="{!find}" value="Find"/>
+            <apex:pageBlockTable value="{!acts}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Type}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Industry}"/>               
+            
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+    
+    </apex:form>
+</apex:page>
