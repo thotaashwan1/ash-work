@@ -4,7 +4,7 @@ import { bikes } from 'c/data';
 
 export default class Detail extends LightningElement {
 
-    // Ensure changes are reactive when product is updated
+    // Ensure changes are reactive when product is updated.
     product;
 
     // Private var to track @api productId
